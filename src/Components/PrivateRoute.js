@@ -1,24 +1,25 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import authSelectors from '../redux/Auth/auth-selectors';
 
-const PrivateRoute = ({
-  component: Component,
-  isAuthenticated,
-  redirectTo,
-  ...routeProps
-}) => (
-  <Route
-    {...routeProps}
-    render={props =>
-      isAuthenticated ? <Component {...props} /> : <Redirect to={redirectTo} />
-    }
-  />
-);
+const PrivateRoute = ({ children, redirectTo, ...routeProps }) => {
+  const isLoggedIn = useSelector(authSelectors.getIsAuthenticated);
+  return (
+    <Route {...routeProps}>
+      {isLoggedIn ? children : <Redirect to={redirectTo} />}
+    </Route>
+  );
+};
 
-const mapStateToProps = state => ({
-  isAuthenticated: authSelectors.getIsAuthenticated(state),
-});
+export default PrivateRoute;
+//  <Route
+//    {...routeProps}
+//    render={props =>
+//      isAuthenticated ? <Component {...props} /> : <Redirect to={redirectTo} />
+//    }
+//  />;
 
-export default connect(mapStateToProps)(PrivateRoute);
+// const mapStateToProps = state => ({
+//   isAuthenticated: authSelectors.getIsAuthenticated(state),
+// });

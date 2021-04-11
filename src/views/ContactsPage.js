@@ -1,36 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ContactList from '../Components/ContactList';
 import ContactForm from '../Components/ContactForm';
 import Filter from '../Components/Filter';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import contactsOperation from '../redux/Contacts/contacts-operation';
+import { getIsLoading } from '../redux/Contacts/contacts-selectors';
 import Spinner from '../Components/Spinner';
 import styles from './common.module.scss';
 
-class ContactsPage extends React.Component {
-  componentDidMount() {
-    this.props.fetchContacts();
-  }
-  render() {
-    return (
-      <div className={styles.contactContainer}>
-        <ContactForm />
-        <Filter />
-        {this.props.isLoading && <Spinner />}
-        <ContactList />
-        <ToastContainer />
-      </div>
-    );
-  }
-}
-const mapStateToProps = state => ({
-  isLoading: state.contacts.loading,
-});
-const mapDispatchToProps = dispatch => ({
-  fetchContacts: () => dispatch(contactsOperation.fetchContacts()),
-});
+function ContactsPage() {
+  // componentDidMount() {
+  //   this.props.fetchContacts();
+  // }
+  const isLoading = useSelector(getIsLoading);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(contactsOperation.fetchContacts());
+  }, [dispatch]);
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContactsPage);
-// export default App;
+  return (
+    <div className={styles.contactContainer}>
+      <ContactForm />
+      <Filter />
+      {isLoading && <Spinner />}
+      <ContactList />
+      <ToastContainer />
+    </div>
+  );
+}
+// getIsLoading
+// const mapStateToProps = state => ({
+//   isLoading: state.contacts.loading,
+// });
+// const mapDispatchToProps = dispatch => ({
+//   fetchContacts: () => dispatch(contactsOperation.fetchContacts()),
+// });
+
+// export default connect(mapStateToProps, mapDispatchToProps)(ContactsPage);
+
+export default ContactsPage;
