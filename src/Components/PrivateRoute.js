@@ -13,6 +13,7 @@ const PrivateRoute = ({ children, redirectTo, ...routeProps }) => {
 };
 
 export default PrivateRoute;
+
 //  <Route
 //    {...routeProps}
 //    render={props =>

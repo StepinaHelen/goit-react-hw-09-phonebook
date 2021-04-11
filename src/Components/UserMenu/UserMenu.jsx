@@ -29,6 +29,9 @@ const UserMenu = () => {
     </div>
   );
 };
+
+export default UserMenu;
+
 // const mapStateToProps = state => ({
 //   name: authSelectors.getUserName(state),
 //   avatar: kotik,
@@ -38,4 +41,3 @@ const UserMenu = () => {
 //   onLogout: authOperation.logout,
 // };
 // export default connect(mapStateToProps, mapDispatchToProps)(UserMenu);
-export default UserMenu;

@@ -7,12 +7,6 @@ import { contactsOperation } from '../../redux/Contacts';
 import { getContacts } from '../../redux/Contacts/contacts-selectors';
 
 function ContactForm() {
-  //   state = {
-  //     name: '',
-  //     number: '',
-  //   };
-  //чтобы  объявить state внутри функции используется хук - useState
-  // принимает аргументом  начальное состояние, возвращает массив из 2-х значений [state, update]
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -23,12 +17,6 @@ function ContactForm() {
     (name, number) => dispatch(contactsOperation.addContact(name, number)),
     [dispatch],
   );
-
-  //   handleInputChange = event => {
-  //     const valueInput = event.currentTarget.name;
-  //     console.log(valueInput);
-  //     this.setState({ [valueInput]: event.currentTarget.value() });
-  //   };
 
   const handleInputChange = event => {
     const valueInput = event.currentTarget.name;
@@ -101,6 +89,23 @@ function ContactForm() {
     </div>
   );
 }
+
+export default ContactForm;
+
+//   state = {
+//     name: '',
+//     number: '',
+//   };
+
+//чтобы  объявить state внутри функции используется хук - useState
+// принимает аргументом  начальное состояние, возвращает массив из 2-х значений [state, update]
+
+//   handleInputChange = event => {
+//     const valueInput = event.currentTarget.name;
+//     console.log(valueInput);
+//     this.setState({ [valueInput]: event.currentTarget.value() });
+//   };
+
 // const mapStateToProps = state => ({
 //   contacts: getContacts(state),
 // });
@@ -109,4 +114,3 @@ function ContactForm() {
 //   addContact: (name, number) =>
 //     dispatch(contactsOperation.addContact(name, number)),
 // });
-export default ContactForm;

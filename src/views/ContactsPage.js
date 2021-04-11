@@ -30,7 +30,9 @@ function ContactsPage() {
     </div>
   );
 }
-// getIsLoading
+
+export default ContactsPage;
+
 // const mapStateToProps = state => ({
 //   isLoading: state.contacts.loading,
 // });
@@ -39,5 +41,3 @@ function ContactsPage() {
 // });
 
 // export default connect(mapStateToProps, mapDispatchToProps)(ContactsPage);
-
-export default ContactsPage;

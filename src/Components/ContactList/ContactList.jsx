@@ -20,6 +20,9 @@ const ContactList = () => {
     </div>
   );
 };
+
+export default ContactList;
+
 // const mapStateToProps = state => {
 //   return {
 //     contacts: getVisibleContacts(state),
@@ -28,5 +31,3 @@ const ContactList = () => {
 // const mapDispatchToProps = dispatch => ({
 //   onDeleteContact: id => dispatch(contactsOperation.deleteContact(id)),
 // });
-
-export default ContactList;

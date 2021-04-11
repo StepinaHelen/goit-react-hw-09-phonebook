@@ -14,22 +14,4 @@ const PublicRoute = ({ children, redirectTo, ...routeProps }) => {
     </Route>
   );
 };
-
-//   (
-//   <Route
-//     {...routeProps}
-//     render={props =>
-//       isAuthenticated && routeProps.restricted ? (
-//         <Redirect to={redirectTo} />
-//       ) : (
-//         <Component {...props} />
-//       )
-//     }
-//   />
-// );
-
-// const mapStateToProps = state => ({
-//   isAuthenticated: authSelectors.getIsAuthenticated(state),
-// });
-
 export default PublicRoute;

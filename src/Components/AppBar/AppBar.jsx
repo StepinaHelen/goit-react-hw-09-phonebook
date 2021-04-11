@@ -18,8 +18,10 @@ const AppBar = () => {
     </header>
   );
 };
+
+export default AppBar;
+
 // const mapStateToPros = (state)=>({
 //   isLoggedIn: authSelectors.getIsAuthenticated(state)
 // })
 // export default connect(mapStateToPros)(AppBar);
-export default AppBar;
