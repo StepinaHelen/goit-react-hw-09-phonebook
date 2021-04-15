@@ -99,7 +99,7 @@ export default ContactForm;
 
 //чтобы  объявить state внутри функции используется хук - useState
 // принимает аргументом  начальное состояние, возвращает массив из 2-х значений [state, update]
-
+// Crated by Stepina Helen
 //   handleInputChange = event => {
 //     const valueInput = event.currentTarget.name;
 //     console.log(valueInput);

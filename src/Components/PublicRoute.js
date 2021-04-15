@@ -15,3 +15,14 @@ const PublicRoute = ({ children, redirectTo, ...routeProps }) => {
   );
 };
 export default PublicRoute;
+
+//  <Route
+//    {...routeProps}
+//    render={props =>
+//      isAuthenticated ? <Component {...props} /> : <Redirect to={redirectTo} />
+//    }
+//  />;
+// Created by Stepina Helen
+// const mapStateToProps = state => ({
+//   isAuthenticated: authSelectors.getIsAuthenticated(state),
+// });
