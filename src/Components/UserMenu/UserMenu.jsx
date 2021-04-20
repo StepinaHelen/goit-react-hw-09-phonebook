@@ -34,7 +34,6 @@ export default UserMenu;
 
 // const mapStateToProps = state => ({
 //   name: authSelectors.getUserName(state),
-//   avatar: created by StepinaHelen,
 // });
 
 // const mapDispatchToProps = {

@@ -24,7 +24,6 @@ const ContactList = () => {
 export default ContactList;
 
 // const mapStateToProps = state => {
-// Created by Stepina Helen
 //   return {
 //     contacts: getVisibleContacts(state),
 //   };
